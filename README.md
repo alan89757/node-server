@@ -15,3 +15,12 @@ server {
   }
 }
 ```
+
+- apache配置静态服务
+```bash
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+```
